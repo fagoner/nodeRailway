@@ -1,11 +1,13 @@
 import express from "express";
+import { PORT } from "./config";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req,res)=> {
     res.send('Hola mundo!')
     
 })
 
-app.listen(3000);
-console.log("Corriendo en el puerto 3000");
+app.listen(PORT);
+console.log(`Corriendo en el puerto ${PORT}`);
